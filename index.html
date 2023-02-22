@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.radio_text{
+    color: blue;
+}
+.form_item-radio{
+    position: absolute;
+    left: -9999px;
+}
+.form_item-radio:checked + .radio_fake-button{
+    border: 1px solid blue;
+}
+.radio_fake-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #efefef;
+    border-radius: 10%;
+    margin-right: 6px;
+}
+.radio_fake-button::before{
+    content: "";
+    display: flex;
+    width: 1px;
+    height: 4px;
+    border: 5px solid transparent;
+    border-bottom: 1px solid blue;
+    border-left: 1px solid blue;
+    transform: translateX(4px) rotate(-45deg);
+    transform-origin: left bottom;
+}
+    </style>
+</head>
+<body>
+    <div class="box">
+            <label>
+                <input type="radio" class="form_item-radio" name="foto">
+                    <span class="radio_fake-button"></span>
+                    <span class="radio_text">Да</span>
+            </label>
+            <label>
+                <input type="radio" class="form_item-radio" name="foto">
+                    <span class="radio_fake-button"></span>
+                    <span class="radio_text">Нет</span>
+            </label>
+    </div>
+</body>
+</html>
